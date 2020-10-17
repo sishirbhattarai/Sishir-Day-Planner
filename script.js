@@ -1,4 +1,9 @@
-var day = document.geElementById("#currentDay");
 
-moment(day);
-console.log(day);
+function day(){
+    var today = moment().format('dddd MMMM Do YYYY');
+    $("#currentDay").text(today);
+    console.log(today)
+    
+}
+
+day();
