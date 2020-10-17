@@ -73,3 +73,19 @@ textarea{
 #currentDay {
   margin-top: 1.5rem;
 }
+
+.fas fa-save {
+  text-align: center;
+  flex: 3rem;
+
+}
+
+.col-lg-8 {
+  
+  border: 4px solid black;
+}
+
+.col-lg-2 {
+  border: 4px solid black;
+}
+
