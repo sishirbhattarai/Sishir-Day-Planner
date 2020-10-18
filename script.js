@@ -15,7 +15,7 @@ var endTime = 1700;
 
 var clockTime = [0900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700];
 
-for (var i = 0; i < clockTime.length; i++) {
+//for (var i = 0; i < clockTime.length; i++) {
 
 //   var newDiv = $("<div>");
 
@@ -25,15 +25,8 @@ for (var i = 0; i < clockTime.length; i++) {
 //   $(".time").text(clockTime[i]);
 //   console.log("I am cool");
 
-<div class="row">
-<div class="col-lg-2" id="time">clockTime[i] </div>
-<div class="col-lg-8"></div>
-<div class="col-lg-2">
-  <button class="button" id="save-button">
-    <i class="fas fa-save"></i>
-  </button>
-</div>
-</div>
 
 
-}
+
+
+//}
