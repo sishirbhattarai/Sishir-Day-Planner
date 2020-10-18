@@ -10,8 +10,30 @@ day();
 var currentTime = moment().calendar(); 
 console.log(currentTime);
 
-// var startTime = 9;
-// var endTime = 5;
+var startTime = 0900;
+var endTime = 1700;
 
-// var time = 
+var clockTime = [0900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700];
 
+for (var i = 0; i < clockTime.length; i++) {
+
+//   var newDiv = $("<div>");
+
+//   $(".row").append(newDiv);
+//   $(".col-lg-2").append(newDiv);
+//  // $(".col-lg-2").$("#time").append(newDiv);
+//   $(".time").text(clockTime[i]);
+//   console.log("I am cool");
+
+<div class="row">
+<div class="col-lg-2" id="time">clockTime[i] </div>
+<div class="col-lg-8"></div>
+<div class="col-lg-2">
+  <button class="button" id="save-button">
+    <i class="fas fa-save"></i>
+  </button>
+</div>
+</div>
+
+
+}
