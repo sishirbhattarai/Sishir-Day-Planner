@@ -7,44 +7,45 @@ function day() {
 }
 day();
 
-var currentTime = moment().format('dddd MMMM Do YYYY hh:mm:ss a');
-console.log(currentTime);
+//var currentTime = moment().format('dddd MMMM Do YYYY hh:mm:ss a');
 
-var currentHour = new Date().getHours() - 12;
-console.log(currentHour);
+var storedInput = window.localStorage.getItem("schedule");
 
+function updateColor() {
 
+  var currentHour = new Date().getHours();
+  console.log(currentHour);
 
-var storedInput = JSON.parse(localStorage.getItem("schedule"));
+$("#textInput").each(function() {
+  
+    var blockTime = parseInt($(this).attr("data-time"))
 
-//console.log(schedule);
+  console.log(blockTime);
 
-$("#inlineFormInput").each(function() {
-    var blockTime = $(this).attr("class").text;
-    var currentHour = new Date().getHours() - 12;
+  if (currentHour > blockTime) {
+    $(this).addClass("past");
 
-//   if (currentHour > blockTime) {
-//     $(this).addClass("present");
+  
+  } else if (blockTime === currentHour) {
+    $(this).addClass("present");
 
-//   } else if (blockTime === currentHour) {
-//     $(this).addClass("present")
-
-// } else {
-//     $(this).addClass("future")
-// }
+} else {
+    $(this).addClass("future");
+}
   
 });
-
+}
 
 $(".saveBtn").on("click", function() {
   
-  var userInput = $(this).attr("textarea").val();
-  var blockTime = $(this).attr("p")
-  localStorage.setItem(blockTime, userInput);
+  var userInput = $(this).siblings(".info").val();
+  //var blockTime = parseInt($(this).attr("data-time"))
+
+  window.localStorage.setItem("schedule", userInput);
 console.log(localStorage)
 });
 
-
+updateColor();
 
 
 

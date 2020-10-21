@@ -50,7 +50,7 @@ textarea{
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: red;
   color: white;
 }
 
@@ -89,7 +89,6 @@ textarea{
 }
 
 .col-lg-8 {
-background-color: white;
 border: solid;
 padding: 1.5rem;
 }
@@ -111,13 +110,10 @@ padding: 1.5rem;
   height: 100%;
 }
 
-.time-block {
-  background-color:none;
-}
-
 .hour{
   background-color:lightseagreen;
   color:black;
+  
 }
 
 
