@@ -16,32 +16,33 @@ function updateColor() {
   var currentHour = new Date().getHours();
   console.log(currentHour);
 
-$("#textInput").each(function() {
+$(".info").each(function() {
   
-    var blockTime = parseInt($(this).attr("data-time"))
+    var blockTime = parseInt($(this).attr("data-time"));
 
   console.log(blockTime);
 
   if (currentHour > blockTime) {
-    $(this).addClass("past");
+     $(this).addClass("past");
 
   
-  } else if (blockTime === currentHour) {
-    $(this).addClass("present");
+  } else if (currentHour < blockTime) {
+       $(this).addClass("present");
 
 } else {
     $(this).addClass("future");
 }
   
 });
-}
+};
 
 $(".saveBtn").on("click", function() {
   
-  var userInput = $(this).siblings(".info").val();
-  //var blockTime = parseInt($(this).attr("data-time"))
+  //var userInput = $(this).siblings(".info").val();
+  var blockTime = $(this).attr("data-time")
+  var userInput = $(this).parent().find("textarea").val();
 
-  window.localStorage.setItem("schedule", userInput);
+  window.localStorage.setItem(blockTime, userInput);
 console.log(localStorage)
 });
 
