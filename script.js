@@ -1,4 +1,5 @@
 //Use of `moment()` to display the day of the week at the very top of the page
+$(document).ready(function() {
 
 function day() {
   var today = moment().format("dddd MMMM Do YYYY hh:mm:ss a");
@@ -7,15 +8,15 @@ function day() {
 }
 day();
 
-//var currentTime = moment().format('dddd MMMM Do YYYY hh:mm:ss a');
+var storedInput = JSON.parse(window.localStorage.getItem("schedule")) || {};
 
-var storedInput = window.localStorage.getItem("schedule") || [];
 
 function updateColor() {
   var currentHour = new Date().getHours();
 
   $(".info").each(function () {
     var blockTime = parseInt($(this).attr("data-time"));
+console.log(blockTime)
 
     if (currentHour > blockTime) {
       $(this).addClass("past");
@@ -28,34 +29,27 @@ function updateColor() {
 }
 
 $(".saveBtn").on("click", function () {
-  //var userInput = $(this).siblings(".info").val();
-  //var blockTime = parseInt($(this).attr("data-time"));
-  var userInput = $(this).parent().find("textarea").val();
+//var userInput = $(this).siblings(".info").val();
+  // var blockHour = parseInt($(this).attr("data-hour"));
+var userInput = $(this).parent().find("textarea").val();
+ // var time = $(this).parent().attr("id");
+ var timeblockHour = $(this).parent().find("textarea").attr("data-time");
+storedInput[timeblockHour] = userInput
+ 
+window.localStorage.setItem("schedule", JSON.stringify(storedInput));
+var test = JSON.parse(window.localStorage.getItem("schedule"));
 
-  window.localStorage.setItem("schedule", JSON.stringify(userInput));
-  //userInput.push(storedInput);
-  
-  var storedInput = JSON.parse(window.localStorage.getItem("schedule") || []);
-
-  console.log('retrieved data Object: ', storedInput);
+console.log('retieved data object: ', test)
 });
 
 updateColor();
 
-// for (var i = 0; i < clockTime.length; i++) {
+function init() {
+  for (var i = 9; i <= 17; i++) {
+    $("[data-time=" + i + "]").val(storedInput[i])
+  }
+}
 
-//   var newDiv = $("<div>");
+init();
+});
 
-//   $(".row").append(newDiv);
-//   $(".col-md-2").append(newDiv);
-//  // $(".col-md-2").$("#time").append(newDiv);
-//   $(".time").text(clockTime[i]);
-//   console.log("I am cool");
-
-// }
-// for (i = 0, i < clockTime.length, i++){
-//   today.text
-// }
-
-// if (today < clockTime[i]) {
-//   $(".col-lg-8").css("background-color", "green");

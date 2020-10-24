@@ -2,6 +2,19 @@
 
  The site is published at https://sishirbhattarai.github.io/Sishir-Day-Planner/
 ## Your Task
+Scheduling the day:
+
+![](./images/planner1.PNG)
+
+Saving the schedule:
+
+![](./images/planner2.PNG)
+
+After refreshing, the data stays on:
+
+![](./images/planner3.PNG)
+
+
 
 Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
