@@ -4,15 +4,15 @@
 ## Your Task
 Scheduling the day:
 
-![](./images/planner1.PNG)
+![](./Images/planner1.PNG)
 
 Saving the schedule:
 
-![](./images/planner2.PNG)
+![](./Images/planner2.PNG)
 
 After refreshing, the data stays on:
 
-![](./images/planner3.PNG)
+![](./Images/planner3.PNG)
 
 
 
